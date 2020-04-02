@@ -13,6 +13,7 @@ import (
 var myLogger *log.Logger
 
 func main() {
+	fmt.Println("github setting!!!")
 	fmt.Println("C : 계산기 실행, L : 로또 번호 생성, Q : 종료")
 
 	reader := bufio.NewReader(os.Stdin) // os 운영체제가 갖고 있는 표준 입력을 통해 읽기용 객체 생성
@@ -92,16 +93,16 @@ if i == "C" {
 	line, _ = reader.ReadString('\n')
 	line = strings.TrimSpace(line)
 
-	for i := 0; i < len(a); i++ {
-		a[i] = rand.Intn(45) + 1
+	for i := 0; i < len(a); i++ { //숫자 6개를 뽑기 위한 for문
+		a[i] = rand.Intn(45) + 1 // 1~45 숫자 중 랜덤으로 하나를 뽑아 a[0]~a[6]에 저장
 
-		for j := 0; j < i; j++ {
-			if a[i] == a[j] {
+		for j := 0; j < i; j++ { // 중복제거를 위한 for문 : 현재 a[]에 저장된 랜덤숫자와 이전 a[]에 들어간 숫자 비교
+			if a[i] == a[j] {    
 				i--
 			}
 		}
 	}
-	for k := 0; k <= 5; k++ {
+	for k := 0; k <= 5; k++ { // 채워진 배열을 출력하기 위한 for문
 			fmt.Println(a[k])
 	}
 	fmt.Println("입니다.")
