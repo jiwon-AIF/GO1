@@ -13,6 +13,7 @@ import (
 var myLogger *log.Logger
 
 // 200402 jin : format document
+// fork?!!
 func main() {
 	fmt.Println("C : 계산기 실행, L : 로또 번호 생성, Q : 종료")
 
