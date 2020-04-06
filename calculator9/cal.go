@@ -15,8 +15,9 @@ var choice string
 
 // 200402 jin : format document
 // fork?!!
+// abc
 func main() {
-	
+
 	fpLog, err := os.OpenFile("logfile.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
 		panic(err)
@@ -36,7 +37,7 @@ func run() {
 Loop:
 	fmt.Println("C : 계산기 실행, L : 로또 번호 생성, Q : 종료")
 	//fmt.Scanf("%v", &choice)
-	reader := bufio.NewReader(os.Stdin) 
+	reader := bufio.NewReader(os.Stdin)
 	choice, _ := reader.ReadString('\n')
 	choice = strings.TrimSpace(choice)
 
@@ -44,7 +45,7 @@ Loop:
 		fmt.Println("숫자를 입력하세요")
 		myLogger.Println("숫자를 입력하세요")
 
-		reader = bufio.NewReader(os.Stdin) 
+		reader = bufio.NewReader(os.Stdin)
 
 		line, _ := reader.ReadString('\n')
 		line = strings.TrimSpace(line)
@@ -69,19 +70,19 @@ Loop:
 		if line == "+" {
 			fmt.Printf("%.2f + %.2f + %.2f = %.2f", n1, n2, n3, n1+n2+n3)
 			myLogger.Printf("%.2f + %.2f +  %.2f = %.2f", n1, n2, n3, n1+n2+n3)
-			
+
 		} else if line == "-" {
 			fmt.Printf("%.2f - %.2f - %.2f = %.2f", n1, n2, n3, n1-n2-n3)
 			myLogger.Printf("%.2f - %.2f - %.2f = %.2f", n1, n2, n3, n1-n2-n3)
-			
+
 		} else if line == "*" {
 			fmt.Printf("%.2f * %.2f * %.2f = %.2f", n1, n2, n3, n1*n2*n3)
 			myLogger.Printf("%.2f * %.2f * %.2f = %.2f", n1, n2, n3, n1*n2*n3)
-			
+
 		} else if line == "/" {
 			fmt.Printf("%.2f / %.2f / %.2f = %.2f", n1, n2, n3, n1/n2/n3)
 			myLogger.Printf("%.2f / %.2f / %.2f = %.2f", n1, n2, n3, n1/n2/n3)
-			
+
 		} else {
 			fmt.Println("잘못 입력하셨습니다.")
 			myLogger.Println("잘못 입력하셨습니다.")
@@ -102,7 +103,7 @@ Loop:
 				}
 			}
 		}
-		for k := 0; k <=5; k++ { // 채워진 배열을 출력하기 위한 for문
+		for k := 0; k <= 5; k++ { // 채워진 배열을 출력하기 위한 for문
 			fmt.Println(a[k])
 			if k == 5 {
 				fmt.Println("입니다.")
