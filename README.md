@@ -1,4 +1,4 @@
-#Calculator
+# Calculator
 
-This program provides a simple calculator function(+,-,*,/) with a random integer number(1-100).
+This program provides a simple calculator function(+,-,*,/) with a float integer numbers(1-100).
 
